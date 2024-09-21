@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Password Validation</h3>
+
+<form>
+    <label>Password (min 6 characters): </label>
+    <input type="password" id="password">
+    <span id="password-error" class="error"></span>
+    <br>
+
+    <label>Repeat password: </label>
+    <input type="password" id="confirm-password">
+    <span id="confirm-error" class="error"></span>
+    <br>
+    <button>Submit</button>
+</form>
+
+<script>
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm-password');
+    const passwordError = document.getElementById('password-error');
+    const confirmError = document.getElementById('confirm-error');
+
+    function validate() {
+        passwordError.textContent = password.value.length < 6 ? 'Too short' : '';
+        confirmError.textContent = password.value !== confirmPassword.value ? "The two passwords don't match" : '';
+    }
+
+    password.oninput = validate;
+    confirmPassword.oninput = validate;
+</script>
+
+</body>
+</html>

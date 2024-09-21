@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            font-size: 40PX;
+            border: solid 2px black;
+            text-align: center;
+            padding-top: 10PX;
+            padding-bottom: 10PX;
+            width: 300px;
+            
+        }
+    </style>
+</head>
+<body>
+    <p onmouseover="mouseOver()" onmouseout="mouseOut()">
+        Hello World!
+    </p>
+
+    <script>
+        function mouseOver() {
+            const element = document.querySelector('p');
+            element.style.fontWeight = 'bold'; 
+            element.style.backgroundColor = 'yellow'; 
+        }
+
+        function mouseOut() {
+            const element = document.querySelector('p');
+            element.style.fontWeight = '';  
+            element.style.backgroundColor = 'white';  
+        }
+    </script>
+</body>
+</html>

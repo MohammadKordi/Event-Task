@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Formatter</title>
+  <style>
+    #editor {
+      border: 1px solid #000;
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      width: 700px;
+    }
+    select, input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <select id="fontName">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+  </select>
+
+  <select id="fontSize">
+    <option value="2">10pt</option>
+    <option value="3">12pt</option>
+    <option value="4">14pt</option>
+  </select>
+
+  <input type="checkbox" id="bold"> Bold
+  <input type="checkbox" id="italic"> Italic
+  <input type="checkbox" id="underline"> Underline
+
+  <div id="editor" contenteditable="true">The quick brown fox jumps over the lazy dog</div>
+
+  <script>
+    document.getElementById('fontName').onchange = function() {
+      document.execCommand('fontName', false, this.value);
+    };
+    document.getElementById('fontSize').onchange = function() {
+      document.execCommand('fontSize', false, this.value);
+    };
+    document.getElementById('bold').onchange = function() {
+      document.execCommand('bold', false, null);
+    };
+    document.getElementById('italic').onchange = function() {
+      document.execCommand('italic', false, null);
+    };
+    document.getElementById('underline').onchange = function() {
+      document.execCommand('underline', false, null);
+    };
+  </script>
+
+</body>
+</html>

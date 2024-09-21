@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show/Hide Content</title>
+  <style>
+    .content {
+      display: none;
+      margin: 10px 0;
+    }
+    .toggle {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>What is Lorem Ipsum? <span class="toggle" data-target="content1">Show</span></h2>
+  <div id="content1" class="content">
+    <h3>Why do we use it?</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Atque ad tenetur fuga magnam libero modi officia
+          doloremque at nam! Similique, quos quisquam repellat
+           dolorem cumque est veniam iste sint ex consequuntur 
+           ullam accusamus rem earum magni, facilis maiores 
+           consectetur esse iusto nam. Laudantium, reprehenderit
+            tenetur quisquam mollitia laboriosam expedita iste, 
+            impedit explicabo eveniet incidunt hic possimus!
+             Alias aperiam exercitationem enim repudiandae odit
+              accusantium provident, eaque saepe veritatis 
+              pariatur, molestiae cumque voluptates consequuntur
+               temporibus quia et, deserunt impedit tenetur vitae
+                rerum omnis libero unde. Dolores dolor laboriosam
+                 eius corrupti? Vero libero maiores earum 
+                 accusamus, possimus atque provident ea tenetur
+                  tempora maxime!</p>
+  </div>
+
+  <h2>Where does it come from? <span class="toggle" data-target="content2">Show</span></h2>
+  <div id="content2" class="content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Atque ad tenetur fuga magnam libero modi officia
+         doloremque at nam! Similique, quos quisquam repellat
+          dolorem cumque est veniam iste sint ex consequuntur 
+          ullam accusamus rem earum magni, facilis maiores 
+          consectetur esse iusto nam. Laudantium, reprehenderit
+           tenetur quisquam mollitia laboriosam expedita iste, 
+           impedit explicabo eveniet incidunt hic possimus!
+            Alias aperiam exercitationem enim repudiandae odit
+             accusantium provident, eaque saepe veritatis 
+             pariatur, molestiae cumque voluptates consequuntur
+              temporibus quia et, deserunt impedit tenetur vitae
+               rerum omnis libero unde. Dolores dolor laboriosam
+                eius corrupti? Vero libero maiores earum 
+                accusamus, possimus atque provident ea tenetur
+                 tempora maxime!</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        var target = document.getElementById(toggle.getAttribute('data-target'));
+        if (target.style.display === 'none') {
+          target.style.display = 'block';
+          toggle.textContent = 'Hide';
+        } else {
+          target.style.display = 'none';
+          toggle.textContent = 'Show';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

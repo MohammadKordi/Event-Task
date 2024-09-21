@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Animation</title>
+    <style>
+        @keyframes colorChange {
+            0% { background-color: red; }
+            25% { background-color: green; }
+            50% { background-color: blue; }
+            75% { background-color: yellow; }
+            100% { background-color: red; }
+        }
+
+        .animated-box {
+            width: 250px;
+            height: 250px;
+            animation: colorChange 5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-box"></div>
+</body>
+</html>
